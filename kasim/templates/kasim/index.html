@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Jinshad">
+    <title>Baabtra</title>
+</head>
+
+<body>
+    <div style="height: 50px; background-color: #007EE5; padding-left: 100px; padding-top: 15px; padding-right: 100px;">
+        <img src="{% static 'images/ftiw.PNG' %}" alt="" style="border: 500px;" width="120px" height="30px">
+        <label style="color: white; float: right; font-family: Verdana, Geneva, Tahoma, sans-serif;">Contact Us<img
+                src="{% static 'images/phone.PNG' %}" alt="">+91123456789</label>
+    </div><br>
+
+    <a href="{% url 'hm' %}"><img src="{% static 'images/Baabtra.PNG' %}" alt="" width="250px" height="80px" style="padding-left: 200px;"></a>
+    <div style="float: right; width: 65%; height: 100px;">
+        <font style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <form style="padding-left: 50px; padding-top: 40px;">
+                <select name="prgms" id="">
+                    <option value="python">Internship Program</option>
+                    <option value="python">Python</option>
+                    <option value="python">php</option>
+                    <option value="python">java</option>
+                    <option value="python">flutter</option>
+                    <option value="python">angular</option>
+                </select>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                <a href="{% url 'pl' %}"><label for="">Placement</label></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'bg' %}"><label
+                        for="">Blog</label></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="{% url 'au' %}"><label for="">About Us</label></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="">Login</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button"S>Enquire Now</button>
+            </form>
+        </font>
+    </div>
+    <br>
+    <br>
+    {% block content %}
+    <div style="background-color: #015C8E; height: 600px;">
+        <br>
+        <br>
+        <br>
+        <center>
+            <img src="{% static 'images/oray education.PNG' %}" alt="" width="250px" height="130px"><br><br>
+            <label style="font-family: Verdana, Geneva, Tahoma, sans-serif ; color: white;"><b>We are affiliated with
+                    oray education London, UK.</b></label>
+        </center>
+        <br>
+        <br>
+        <center>
+            <div style="height: 300px; width: 70%; background-color: #25536C;">
+                <br>
+                <h3 style="color: white; font-family:Verdana, Geneva, Tahoma, sans-serif;">GETTING A SOFTWARE JOB IS SO
+                    EASY WITH OUR<br>INTERNSHIP PROGRAM</h3>
+                <br>
+                <br>
+                <label style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: lightskyblue;">
+                    Learn programming from the most trusted software training company in Calicut with highest<br>
+                    placement
+                    record. Enroll for software courses and internship programs in Python,PHP, Angular or flutter<br> to
+                    start your career.</label>
+                <br>
+
+            </div>
+        </center>
+
+    </div>
+    <br>
+    <br>
+    <center>
+        <img src="{% static 'images/phptraining.PNG' %}" alt="" width="166px"
+            height="210px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="{% static 'images/python training.PNG' %}" alt="" width="166px"
+            height="210px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="{% static 'images/jstraining.PNG' %}" alt="" width="166px"
+            height="210px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="{% static 'images/Flutter Training.PNG' %}" alt="" width="166px"
+            height="210px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="{% static 'images/angulsr training.PNG' %}" alt="" width="166px" height="210px">
+    </center>
+    <br>
+    <br>
+    <center>
+        <div style="width: 73%; height: 170px;">
+            <label
+                style="float: left; color: #333; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 30px;"><b>Explore
+                    Our internship programme</b></label>
+            <br>
+            <br>
+            <br>
+
+            <label
+                style="float: left; color: #232524; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;">
+                baabtra.com offers you courses and training programs that will enable you to master programming in
+                depth. Enroll and start learning with the experts in the industry. We offer PHP Training with Laravel
+                Framework, Python Training with Django Framework, Angular Training and Node.js Training.</label>
+
+        </div>
+        <img src="{% static 'images/How it works.PNG' %}" alt="" width="100%" height="550px">
+    </center>
+    <br>
+    <br>
+    <h1 align="left"
+        style="font-family: poppins; color: #333; font-family: 'Poppins', sans-serif; padding-left: 100px;">Placed
+        Candidates</h1>
+    <center>
+        <div style="width: 85%; height: 3px;">
+            <hr width="150px" height="3px" align="left" color="darkyellow">
+        </div>
+    </center>
+    <br>
+    <br>
+    <br>
+    <center>
+        <img src="{% static 'images/Placed Candidtaes.PNG' %}" alt="" width="80%">
+        <br>
+        <br>
+        <br>
+        <button>See More</button>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}
+</body>
+
+</html>
