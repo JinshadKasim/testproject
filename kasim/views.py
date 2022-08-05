@@ -13,3 +13,15 @@ def blog(request):
 
 def placement(request):
     return render(request,'kasim/placement.html')
+
+def test(request):
+    return render(request,'kasim/test.html')
+
+def kasim(request):
+    return render(request,'kasim/test2.html')
+
+def test3(request):
+    return render(request,'kasim/test3.html')
+
+def test4(request):
+    return render(request,'kasim/test4.html')

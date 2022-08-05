@@ -1,0 +1,53 @@
+h1,h2,h3{
+    color: red;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#val{
+    color: yellow;
+}
+
+.valo{
+    color: steelblue;
+    background-color: darkcyan;
+}
+
+/* *{
+    background-color: dimgrey;
+} */
+
+/* p span{
+    color: cadetblue;
+} */
+
+input[type="text"]{
+    color: deeppink;
+}
+
+a[class="valo"]{
+    color: yellow;
+    background-color: brown;
+}
+
+span{
+    color: teal;
+    background-color: tomato;
+}
+
+div{
+    color: white;
+    background-color: steelblue;
+}
+
+div span{
+    color: inherit;
+    background-color: inherit;
+    font-size: 30px;
+}
+
+img{
+    text-align: center;
+    width: 500px;
+    height: 200px;
+}

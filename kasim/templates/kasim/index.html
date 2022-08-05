@@ -8,18 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Jinshad">
     <title>Baabtra</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 
 <body>
-    <div style="height: 50px; background-color: #007EE5; padding-left: 100px; padding-top: 15px; padding-right: 100px;">
-        <img src="{% static 'images/ftiw.PNG' %}" alt="" style="border: 500px;" width="120px" height="30px">
-        <label style="color: white; float: right; font-family: Verdana, Geneva, Tahoma, sans-serif;">Contact Us<img
-                src="{% static 'images/phone.PNG' %}" alt="">+91123456789</label>
-    </div><br>
+   <a href="" target="_blank"><img src="{% static 'images/whatsapp.png' %}" alt="" class="whtp"></a>
 
-    <a href="{% url 'hm' %}"><img src="{% static 'images/Baabtra.PNG' %}" alt="" width="250px" height="80px" style="padding-left: 200px;"></a>
-    <div style="float: right; width: 65%; height: 100px;">
-        <font style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <div class="top-div">
+        <img src="{% static 'images/ftiw.PNG' %}" alt=""  class="ftiw">
+        <label class="font">Contact Us&nbsp;&nbsp;
+            <img src="{% static 'images/phone.png' %}" alt="" id="ph">&nbsp;+91 123 456 789</label>
+    </div>
+
+    <div style="width: 500px; height: 100px; float: left; background-color: white; position: fixed;  bottom: 529px; left: 0; top: 48px;"><a href="{% url 'hm' %}"><img src="{% static 'images/Baabtra.PNG' %}" alt="" width="250px" height="80px" style="padding-left: 150px; padding-top: 5px;"></a></div>
+    <div style="float: right; height: 100px;background-color: white; position: fixed    ;left: 500px; bottom: 529px; top: 48px; right: 0;">
+        <font style="font-family: Verdana, Geneva, Tahoma, sans-serif; position: fixed;">
             <form style="padding-left: 50px; padding-top: 40px;">
                 <select name="prgms" id="">
                     <option value="python">Internship Program</option>
@@ -42,21 +45,17 @@
     <br>
     <br>
     {% block content %}
-    <div style="background-color: #015C8E; height: 600px;">
+    <div class="sc-div">
         <br>
-        <br>
-        <br>
-        <center>
-            <img src="{% static 'images/oray education.PNG' %}" alt="" width="250px" height="130px"><br><br>
-            <label style="font-family: Verdana, Geneva, Tahoma, sans-serif ; color: white;"><b>We are affiliated with
+            <img src="{% static 'images/oray education.PNG' %}" alt="" width="300px" height="160px" class="oray-img"><br><br>
+            <label class="txt-a"><b>We are affiliated with
                     oray education London, UK.</b></label>
-        </center>
         <br>
         <br>
         <center>
-            <div style="height: 300px; width: 70%; background-color: #25536C;">
+            <div class="div-th">
                 <br>
-                <h3 style="color: white; font-family:Verdana, Geneva, Tahoma, sans-serif;">GETTING A SOFTWARE JOB IS SO
+                <h3 class   ="gfje">GETTING A SOFTWARE JOB IS SO
                     EASY WITH OUR<br>INTERNSHIP PROGRAM</h3>
                 <br>
                 <br>
@@ -96,7 +95,7 @@
             <br>
 
             <label
-                style="float: left; color: #232524; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;">
+                style="float: left; color: #232524; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 15px;;">
                 baabtra.com offers you courses and training programs that will enable you to master programming in
                 depth. Enroll and start learning with the experts in the industry. We offer PHP Training with Laravel
                 Framework, Python Training with Django Framework, Angular Training and Node.js Training.</label>
