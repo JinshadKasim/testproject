@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'js/dom.js' %}"></script>
+</head>
+<body>
+    <h1>DOM</h1>
+
+    <form action="0">
+        <input type="text" placeholder="Enter Your Text" id="azazel"><br><br>
+        <input type="number" name="" id="a" placeholder="Enter First Number"><br><br>
+        <input type="number" name="" id="b" placeholder="Enter Second Number"><br><br>
+        <input type="number" name="" id="c" placeholder="answer"><br><br>
+        <input type="text" name="" id="">
+        <button type="button" id="add" onclick="addd()">Add</button>
+        <p id="ans"> </p>
+        <p id="p" onclick="func()" ondblclick="fun()">Look the Enemy in the Eye</p>
+        <br><br><br><br>
+        <label for="j">Name</label>
+        <input type="text" name="" id="j"><br><br>
+        <label for="k">Password</label>
+        <input type="password" name="" id="k"><br><br>
+        <button type="button" onclick="show()">Submit</button>
+        <br><br>
+        
+    <span id="jj"></span>
+    <span id="kk"></span>
+    <br><br><br>
+    <img src="{% static 'images/valorant.jfif' %}" alt="" width="900px" height="600px" onclick="img()" ondblclick="img2()" id="mg">
+    <br><br><br>
+    <button type="button" onclick="showimg()">Click</button>
+    <img src="" alt="" style="display: block;" id="mmm">
+        <script>
+            console.log(document.getElementById('azazel').id)
+            console.log(document.getElementById('p'))
+            function func(){
+            document.getElementById('p').style.color='blue'
+            document.getElementById('p').innerHTML='Hello'
+            
+        }
+        function fun(){
+            document.getElementById('p').style.color='brown'
+            document.getElementById('p').innerHTML="lorem ibdabsniu siunsunc si cisu"
+        }
+
+        function addd(){
+          a=Number(document.getElementById('a').value)
+          b=Number(document.getElementById('b').value)
+          console.log(a)
+          console.log(b)
+
+          c=a+b
+          document.getElementById('c').value=c
+          document.getElementById('ans').innerHTML=c
+            
+        }
+
+       function show(){
+            a=document.getElementById('j').value
+            b=document.getElementById('k').value
+            document.getElementById('jj').innerHTML=a
+            document.getElementById('kk').innerHTML=b
+        }
+
+        function img(){
+            document.getElementById('mg').src="{% static 'images/valo.jpg' %}"
+
+        }
+        function img2(){
+            document.getElementById('mg').src="{% static 'images/valorant.jfif' %}"
+
+        }
+        
+        function showimg(){
+            document.getElementById('mmm').src="{% static 'images/va.jpg' %}"
+        }
+        </script>
+    </form>
+    
+</body>
+</html>

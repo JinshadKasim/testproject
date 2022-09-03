@@ -25,3 +25,15 @@ def test3(request):
 
 def test4(request):
     return render(request,'kasim/test4.html')
+
+def bootstrap(request):
+    return render(request,'kasim/bootstrap.html')
+
+def btstrap2(request):
+    return render(request,'kasim/btstrap2.html')
+
+def js(request):
+    return render(request,'kasim/js.html')
+
+def dom(request):
+    return render(request,'kasim/dom.html')

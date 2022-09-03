@@ -10,5 +10,9 @@ urlpatterns = [
     path('test',views.test,name='tst'),
     path('test2',views.kasim,name='ksm'),
     path('test3',views.test3,name='tst3'),
-    path('test4',views.test4,name='tst4')
+    path('test4',views.test4,name='tst4'),
+    path('bootstrap',views.bootstrap,name='bt'),
+    path('btstrap2',views.btstrap2,name='bt2'),
+    path('js',views.js,name='js'),
+    path('dom',views.dom,name='dom'),
 ]

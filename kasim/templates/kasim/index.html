@@ -9,6 +9,8 @@
     <meta name="Author" content="Jinshad">
     <title>Baabtra</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -20,25 +22,37 @@
             <img src="{% static 'images/phone.png' %}" alt="" id="ph">&nbsp;+91 123 456 789</label>
     </div>
 
-    <div style="width: 500px; height: 100px; float: left; background-color: white; position: fixed;  bottom: 529px; left: 0; top: 48px;"><a href="{% url 'hm' %}"><img src="{% static 'images/Baabtra.PNG' %}" alt="" width="250px" height="80px" style="padding-left: 150px; padding-top: 5px;"></a></div>
+    <div style="width: 500px; height: 100px; float: left; background-color: white; position: fixed;  bottom: 529px; left: 0; top: 48px;"><a href="{% url 'hm' %}"><img src="{% static 'images/Baabtra.PNG' %}" alt="" width="400px" height="80px" style="padding-left: 150px; padding-top: 5px;"></a></div>
     <div style="float: right; height: 100px;background-color: white; position: fixed    ;left: 500px; bottom: 529px; top: 48px; right: 0;">
         <font style="font-family: Verdana, Geneva, Tahoma, sans-serif; position: fixed;">
             <form style="padding-left: 50px; padding-top: 40px;">
-                <select name="prgms" id="">
+                <!-- <select name="prgms" id="">
                     <option value="python">Internship Program</option>
                     <option value="python">Python</option>
                     <option value="python">php</option>
                     <option value="python">java</option>
                     <option value="python">flutter</option>
                     <option value="python">angular</option>
-                </select>
+                </select> -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Internship Program
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Python</a></li>
+                      <li><a class="dropdown-item" href="#">Php</a></li>
+                      <li><a class="dropdown-item" href="#">java</a></li>
+                      <li><a class="dropdown-item" href="#">Flutter</a></li>
+                      <li><a class="dropdown-item" href="#">Angular</a></li>
+                    </ul>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
                 <a href="{% url 'pl' %}"><label for="">Placement</label></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="{% url 'bg' %}"><label
                         for="">Blog</label></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="{% url 'au' %}"><label for="">About Us</label></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <label for="">Login</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button"S>Enquire Now</button>
+                <button type="button" class="btn btn-success">Enquire Now</button>
+                </div>
             </form>
         </font>
     </div>
@@ -131,6 +145,7 @@
 
 
 {% endblock %}
+
 </body>
 
 </html>
