@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'db' %}"><button type="button">Form</button></a>
+    <a href="{% url 'login' %}"><button type="button">Login</button></a>
+    <br><br>
+
+    {{data}}
+    <table border="2" width="50% ">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Password</th>
+            <th>Address</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.phone }}</td>
+            <td>{{ i.password }}</td>
+            <td>{{ i.address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+</html>

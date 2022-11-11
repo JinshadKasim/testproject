@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <script src="{% static 'js/form.js' %}"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="testform" class="formm" onsubmit="return validation()">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="nam">
+        <span id="name_error"></span><br><br>   
+        <label for="gender">Gender</label>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="g_male">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="g_female">
+        <span id="radio_error"></span><br><br>   
+        <label for="phone">Phone</label>
+        <input type="number" name="phone" id="ph">
+        <span id="mobile_error"></span><br><br>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="ag">
+        <span id="age_error"></span><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="em">
+        <span id="email_error"></span><br><br>
+        
+        <label for="user">Username</label>
+        <input type="text" name="user" id="usr">
+        <span id="user_error"></span><br><br>
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" id="pass">
+        <span id="pass_error"></span><br><br>
+        
+
+        <button type="submit">Submit</button>
+    
+        
+    </form>
+    
+</body>
+</html>
