@@ -25,4 +25,6 @@ urlpatterns = [
     path('product',views.productReg,name='productreg'),
     path('home',views.homeScreen,name='home'),
     path('show_products',views.showProducts,name='showProducts'),
+    path('update_products/<int:id>',views.updateProducts,name='updateProducts'),
+    path('update_products/update',views.update,name='update'),
 ]

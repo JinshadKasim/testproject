@@ -123,7 +123,8 @@ def productReg(request):
         price = request.POST['price']
         quantity = request.POST['quantity']
         category = request.POST['category']
-        productObj = Products(name=name, description=description, price=price, quantity=quantity, product_category=category)
+        current_user = request.session['userId']
+        productObj = Products(name=name, description=description, price=price, quantity=quantity, product_category=category, user_id=current_user)
         productObj.save()
 
     return render(request,'kasim/productreg.html')
@@ -145,8 +146,32 @@ def homeScreen(request):
 def showProducts(request):
     if 'userId' in request.session:
         current_user = Registration.objects.get(id = request.session['userId'])
-        product_data = Products.objects.all()
+        product_data = Products.objects.filter(user_id=request.session['userId'])
         return render(request,'kasim/show_products.html',{'data':product_data})
     else:
         return redirect('login')
     
+
+def updateProducts(request, id=0):
+    print(id)
+    productObj = Products.objects.get(id = id)
+
+
+
+    return render(request, 'kasim/update_products.html',{'data':productObj})
+
+
+
+def update(request):
+    name = request.POST['name']
+    description = request.POST['description']
+    price = request.POST['price']
+    quantity = request.POST['quantity']
+    category = request.POST['category']
+    pid = request.POST['pid']
+    productObj = Products.objects.filter(id=pid).update(name=name, description=description, price=price, quantity=quantity, product_category=category)
+
+    return redirect('showProducts')
+
+    
+

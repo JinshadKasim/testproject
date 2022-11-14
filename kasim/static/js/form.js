@@ -68,17 +68,4 @@ function validation(){
         return false
     }
 
-    if(password.length<8){
-        pass_error.style.color="red"
-        pass_error.innerHTML="Must be 8 Characters"
-        return false
-    }
-
-    if(gender_male.checked==false && gender_female.checked==false){
-        radio_error.style.color="red"
-        radio_error.innerHTML="Plese select Gender"
-        return false
-    }
-
-
 }

@@ -8,15 +8,18 @@
 </head>
 <body>
     <center>
-        <h1>Products</h1>
+        <h1><u>Products</u></h1>
         <br><br><br>
-        <table border="2">
+        <table border="2" cellpadding="10">
             <tr>
+                <th>Product ID</th>
                 <th>Product Name</th>
                 <th>Product Description</th>
                 <th>Product price</th>
                 <th>Product Quantity</th>
                 <th>Product category</th>
+                <th>User Entered</th>
+                <th colspan="2">Operations</th>
             </tr>
             {% for i in data %}
             <tr>
@@ -25,7 +28,10 @@
                 <td>{{i.description}}</td>
                 <td>{{i.price}}</td>
                 <td>{{i.quantity}}</td>
-                <td>{{i.category}}</td>
+                <td>{{i.product_category}}</td>
+                <td>{{i.user_id}}</td>
+                <td><a href="update_products/{{i.id}}"><button type="button">Update</button></a></td>
+                <td><button type="button">Delete</button></td>
             </tr>
             {% endfor %}
 
