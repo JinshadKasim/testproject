@@ -1,6 +1,12 @@
 from django.shortcuts import render,redirect
-from kasim.models import Registration,Products
-
+from kasim.models import Registration,Products,Staff,Doctors
+from kasim.serializers import DoctorsRegSerializer
+from random import random
+from django.core.files.storage import FileSystemStorage
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.parsers import JSONParser
+from decorators import login_check
 # Create your views here.
 
 def home(request):
@@ -65,10 +71,14 @@ def db(request):
         phone = request.POST['phone']
         password = request.POST['password']
         address = request.POST['address']
-        userObj = Registration(name=name, email=email, phone=phone, password=password, address=address)
+        img = request.FILES['img']
+        profile_image = str(random())+img.name
+        add_image = FileSystemStorage()
+        add_image.save(profile_image,img)
+        userObj = Registration(name=name, email=email, phone=phone, password=password, address=address, img = img)
         userObj.save()
     return render(request,'kasim/db.html')
-
+    
 
 def db2(request):
     userdata = Registration.objects.all()
@@ -100,13 +110,14 @@ def login(request):
     return redirect('home')
 
     
-
+@login_check
 def profile(request):
-    if 'userId' in request.session:
-        current_user = Registration.objects.get(id = request.session['userId'])
-        return render(request,'kasim/profile.html',{'name':current_user})
-    else:
-        return redirect('login')
+    # if 'userId' in request.session:
+    current_user = Registration.objects.get(id = request.session['userId'])
+    #     return render(request,'kasim/profile.html',{'name':current_user})
+    # else:
+    #     return redirect('login')
+    return render(request,'kasim/profile.html',{'name':current_user})
 
 
 def logout(request):
@@ -174,4 +185,70 @@ def update(request):
     return redirect('showProducts')
 
     
+def delete(request,id=0):
+    productObj = Products.objects.get(id = id).delete()
+    return redirect('showProducts')
 
+@csrf_exempt   
+def checkEmail(request):
+    email = request.POST.get('email')
+    print(email)
+    emailExist = Registration.objects.filter(email = email).exists()
+    print(emailExist)
+    return JsonResponse({"message":emailExist})
+
+
+def insert(request):
+    return render(request,'kasim/insert.html')
+
+
+@csrf_exempt   
+def insertData(request):
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    password = request.POST.get('password')
+    place = request.POST.get('place')
+    print(name)
+    print(email)
+    print(password)
+    print(place)
+
+    staffObj = Staff(name=name, email=email, password=password, place=place)
+    staffObj.save()
+    
+    return JsonResponse({"data":staffObj})
+
+def view_data(request):
+    staff = Staff.objects.all()
+    return JsonResponse({"data": staff})
+
+@csrf_exempt   
+def serve_doctor(request,id=0):
+    if request.method == 'POST':
+        doctorData = JSONParser().parse(request)
+        print(doctorData)
+        doctor_serializer = DoctorsRegSerializer(data=doctorData)
+        if doctor_serializer.is_valid():
+            doctor_serializer.save()
+            return JsonResponse({'status':'Doctors Registered Successfully'})
+    elif request.method == "GET":
+        doctor = Doctors.objects.all()
+        doctor_serializer = DoctorsRegSerializer(doctor,many=True)
+        return JsonResponse({"data":doctor_serializer.data})
+    elif request.method == "PUT":
+        doctor_data = JSONParser().parse(request)
+        doctor = Doctors.objects.get(id = doctor_data['id'])
+        doctor_serializer = DoctorsRegSerializer(doctor,doctor_data)
+    elif request.method == "DELETE":
+        doctor = Doctors.objects.get(id = id)
+        doctor.delete()
+        return JsonResponse({"messagae":"Data Deleted Successfully"})
+
+        if doctor_serializer.is_valid():
+            doctor_serializer.save()
+            return JsonResponse({"data":"data updated successfully"})
+
+
+        
+    return JsonResponse({'status':'Registration Failed'}
+)

@@ -27,4 +27,11 @@ urlpatterns = [
     path('show_products',views.showProducts,name='showProducts'),
     path('update_products/<int:id>',views.updateProducts,name='updateProducts'),
     path('update_products/update',views.update,name='update'),
+    path('delete_products/<int:id>',views.delete,name='delete'),
+    path('email_check',views.checkEmail,name='email_check'),
+    path('insert',views.insert,name='insert'),
+    path('insert_data',views.insertData,name='insertdata'),
+    path('view_data',views.view_data,name='viewdata'),
+    path('doctors',views.serve_doctor,name='doctor'),
+    path('doctors/<int:id>',views.serve_doctor,name='doctor'),
 ]

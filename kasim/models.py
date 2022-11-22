@@ -8,6 +8,7 @@ class Registration(models.Model):
     phone = models.BigIntegerField()
     password = models.CharField(max_length=100)
     address = models.CharField(max_length=100)
+    img = models.ImageField(upload_to = "profile_images" )
 
     class Meta():
         db_table = 'registration'
@@ -23,3 +24,26 @@ class Products(models.Model):
 
     class Meta():
         db_table = 'products'
+
+
+
+class Staff(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    place = models.CharField(max_length=100)
+
+    class Meta():
+        db_table = 'staff'
+
+
+
+class Doctors(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    phone = models.BigIntegerField()
+    department = models.CharField(max_length=100)
+    place = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'doctors'
