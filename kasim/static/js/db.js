@@ -16,7 +16,7 @@ function checkEmailExist(){
             }
             else{
                 $('#emailError').html(" ")
-                $('#submit').prop('disabled',true)
+                $('#submit').prop('disabled',false)
 
 
             }

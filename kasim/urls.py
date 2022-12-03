@@ -34,4 +34,6 @@ urlpatterns = [
     path('view_data',views.view_data,name='viewdata'),
     path('doctors',views.serve_doctor,name='doctor'),
     path('doctors/<int:id>',views.serve_doctor,name='doctor'),
+    path('modal',views.modal,name='modal'),
+    path('responsive',views.responsive,name='responsive'),
 ]
